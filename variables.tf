@@ -10,15 +10,15 @@ variable "region" {
 
 variable "access_key" {
   type = string
-  default = "AKIAXJP4M3CMR2IZKH2D"
+  default = "*******************************"
 }
 
 variable "secret_key" {
   type = string
-  default = "KmMLswNfy3mc/9MaR12Qx4yV1jF6kP/aPRSesWQq"
+  default = "*********************************"
 }
 
 variable "vpc_id" {
   type = string
-  default = "vpc-0e1d558dab799c901"
+  default = "******************"
 }
