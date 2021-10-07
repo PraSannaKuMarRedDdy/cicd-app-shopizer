@@ -1,0 +1,37 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo Entered the install phase...
+      - ls
+      - pwd
+    finally:
+      - echo This always runs even if the update or install command fails
+  pre_build:
+    commands:
+      - echo check maven version
+      - mvn -version
+    finally:
+      - echo This always runs even if the login command fails
+  build:
+    commands:
+      - echo Entered the build phase...
+      - mvn package
+    finally:
+      - echo This always runs even if the install command fails
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+      - pwd
+      - ls -la
+      - ls -a sm-shop/target
+artifacts:
+  files:
+    - '**/*'
+    - sm-shop/target/ROOT.war
+#    - /root/.m2/repository/com/shopizer/sm-shop/2.17.0/sm-shop-2.17.0.war
+#    - appspec.yml
+#    - scripts/*
